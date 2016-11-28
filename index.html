@@ -1,13 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="css/style.css"></link>
-  <title>hCard Builder</title>
-</head>
+<html>
+<head><title>hCard Builder</title></head>
+<link rel="stylesheet" href="css/style.css"></link>
 <body>
-<script src="js/angular.js"></script>
+    <div ng-app="">
+        <div class="container">
+            <h2>hCard Builder</h2>
+            <div class="leftPane">
+                <form action="">
+                    <fieldset>
+                        <legend>PERSONAL DETAILS</legend>
+                        <div class="lbltxtBlock">
+                            <label for="given-name">GIVEN NAME</label>
+                            <input type="text" name="givenname" ng-model="givenname">
+                        </div>
+                        <div class="lbltxtBlock">
+                            <label for="surname">SURNAME</label>
+                            <input type="text" name="surname" ng-model="surname">
+                        </div>
+                        <div class="lbltxtBlock">
+                            <label for="email">EMAIL</label>
+                            <input type="email" name="email" ng-model="email">
+                        </div>
+                        <div class="lbltxtBlock">
+                            <label for="phone">PHONE</label>
+                            <input type="text" name="phone" ng-model="phone">
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>ADDRESS</legend>
+                        <div class="lbltxtBlock">
+                            <label for="housename">HOUSE NAME OR #</label>
+                            <input type="text" name="housename" ng-model="housename">
+                        </div>
+                        <div class="lbltxtBlock">
+                            <label for="street"> STREET</label>
+                            <input type="text" name="street" ng-model="street">
+                        </div>
+                        <div class="lbltxtBlock">
+                            <label for="subrub">SUBURB</label>
+                            <input type="text" name="suburb" ng-model="suburb">
+                        </div>
+                        <div class="lbltxtBlock">
+                            <label for="state">STATE</label>
+                            <input type="text" name="state" ng-model="state">
+                        </div>
+                        <div class="lbltxtBlock">
+                            <label for="postcode">POSTCODE</label>
+                            <input type="text" name="postcode" ng-model="postcode">
+                        </div>
+                        <div class="lbltxtBlock">
+                            <label for="country">COUNTRY</label>
+                            <input type="text" name="country" ng-model="country">
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="rightPane">
+                <h3 class="hcardHeading">HCARD PREVIEW</h3>
+                <div class="vcard">
+                    <div class="topPane">
+                        <div class="headerName">{{givenname}} {{surname}}</div>
+                    </div>
+                    <div class="bottomPane">
+                        <table>
+                            <tr class="tableRow">
+                                <th>EMAIL</th>
+                                <td>{{email}}</td>
+                            </tr>
+
+                            <tr class="tableRow">
+                                <th>PHONE</th>
+                                <td>{{phone}}</td>
+                            </tr>
+                            <tr>
+                                <th>ADDRESS</th>
+                                <td>{{housename}} {{street}}</td>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <td>{{suburb}} {{state}}</td>
+                            </tr>
+                            <tr>
+                                <th>POSTCODE</th>
+                                <td>{{postcode}}</td>
+                                <th>COUNTRY</th>
+                                <td>{{country}}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 </html>
